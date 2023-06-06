@@ -1,0 +1,150 @@
+.Pages-homediv1 {
+    height: 57vmin;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%),
+                      url("../../public/shutterstock_407632243.jpg");
+    background-position: 60% 25%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5vmin;
+}
+
+.Pages-homediv2 {
+    height: 57vmin;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5vmin;
+}
+
+.Pages-homediv3 {
+    height: 62vmin;
+    background-image: url("../../public/shutterstock_1302552622.jpg");
+    background-position: 60% 10%;
+    display: flex;
+    align-items: center;
+}
+
+.Pages-homediv4 {
+    height: 62vmin;
+    text-align: center;
+}
+
+.Pages-homediv5 {
+    text-align: center;
+    padding: 8vmin;
+}
+
+.Pages-leftdiv {
+    margin-left: 22vmin;
+    width: 70vmin;
+}
+
+.Pages-rightdiv {
+    margin-right: 22vmin;
+    width: 70vmin;
+}
+
+.Pages-homeleftbox {
+    margin-left: 22vmin;
+    width: 70vmin;
+    background-color: rgb(101,94,91);
+    padding: 4vmin;
+    padding-bottom: 6vmin;
+    border-radius: 2%;
+}
+
+.Pages-h1 {
+    font-size: 5vmin;
+    font-weight: normal;
+    color: white;
+}
+
+.Pages-h2 {
+    font-size: 4vmin;
+    font-weight: normal;
+    color: black;
+}
+
+.Pages-h3 {
+    font-size: 3vmin;
+    font-weight: normal;
+    color: white;
+}
+
+.Pages-h4 {
+    font-size: 2.5vmin;
+    font-weight: normal;
+    color: black;
+}
+
+.Pages-contactbutton {
+    background-color: rgb(47,123,184);
+    color: white;
+    font-size: 2vmin;
+    text-decoration: none;
+    border-radius: 5%;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+    padding-left: 3vmin;
+    padding-right: 3vmin;
+}
+
+.Pages-ul {
+    font-weight: bold;
+}
+
+.Pages-homeofficepicture {
+    margin-top: 6vmin;
+    height: 44vmin;
+}
+
+.Pages-boxh2 {
+    font-size: 4vmin;
+    font-weight: normal;
+    color: white;
+    margin-top: 0;
+}
+
+.Pages-boxtext {
+    color: white;
+}
+
+.Pages-loginbutton {
+    background-color: rgb(238,247,255);
+    color: blue;
+    font-size: 2vmin;
+    text-decoration: none;
+    border-radius: 5%;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+    padding-left: 5vmin;
+    padding-right: 5vmin;
+}
+
+.Pages-homesplittext {
+    text-align: left;
+    column-count: 3;
+    margin-left: 22vmin;
+    margin-right: 22vmin;
+}
+
+.Pages-nopagetext {
+    height: 10vmin;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 5vmin;
+    color: black;
+    border: 5vmin;
+}
+
+.Pages-nopagehomelink {
+    height: 10vmin;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-size: calc(5px + 2vmin);
+    color: blue;
+    border: 5vmin;
+    text-decoration: none;
+}

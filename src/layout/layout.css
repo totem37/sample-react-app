@@ -1,0 +1,67 @@
+.Navbar-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3vmin;
+    color: black;
+    border-bottom: 1px solid lightgray;
+    height: 9vmin;
+    align-items: center;
+}
+
+.Navbar-link {
+    text-decoration: none;
+    font-size: 2vmin;
+    font-weight: bold;
+    color: black;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    margin: 2vmin;
+}
+
+.Navbar-login {
+    text-decoration: none;
+    font-size: 2vmin;
+    font-weight: bold;
+    color: rgb(71,138,192);
+    padding-left: 4vmin;
+    padding-right: 4vmin;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+    margin: 2vmin;
+    margin-right: 22vmin;
+    background-color: rgb(238,247,255);
+}
+
+.Navbar-right {
+    display: block;
+    justify-content: right;
+    align-items: center;
+    height: 8vmin;
+    margin-top: 6vmin;
+}
+
+.Navbar-companylogo {
+    height: 4vmin;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    margin: 2vmin;
+    margin-left: 22vmin;
+}
+
+.Footer-container {
+    background-color: white;
+    display: flex;
+    justify-content: right;
+    font-size: 2vmin;
+    color: gray;
+    border-top: 1px solid lightgray;
+}
+
+.Footer-text {
+    margin-right: 22vmin;
+}
