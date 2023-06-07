@@ -77,6 +77,12 @@
     color: black;
 }
 
+.Pages-h5 {
+    font-size: 2.5vmin;
+    font-weight: bold;
+    color: black;
+}
+
 .Pages-contactbutton {
     background-color: rgb(47,123,184);
     color: white;
@@ -126,6 +132,20 @@
     column-count: 3;
     margin-left: 22vmin;
     margin-right: 22vmin;
+}
+
+.Pages-aboutdiv {
+    text-align: left;
+    margin-left: 22vmin;
+    margin-right: 22vmin;
+}
+
+.Pages-aboutofficepicture {
+    height: 60vmin;
+}
+
+.Pages-aboutcenterdiv {
+    text-align: center
 }
 
 .Pages-nopagetext {
