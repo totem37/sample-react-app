@@ -23,9 +23,9 @@ function Carousel(props) {
 
     return (
         <div className="Pages-homediv1" style={styles}>
-            <img src="Icon_Arrow.svg" onClick={decrementImage} className="Pages-leftarrow"/>
+            <img src="Icon_Arrow.svg" alt="Left Arrow" onClick={decrementImage} className="Pages-leftarrow"/>
             {props.children}
-            <img src="Icon_Arrow.svg" onClick={incrementImage} className="Pages-rightarrow"/>
+            <img src="Icon_Arrow.svg" alt="Right Arrow" onClick={incrementImage} className="Pages-rightarrow"/>
         </div>
     )
 }

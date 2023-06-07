@@ -166,6 +166,65 @@
     text-align: center
 }
 
+.Pages-contactdiv {
+    display: flex;
+}
+
+.Pages-contactleftdiv {
+    margin-left: 24vmin;
+    width: 80vmin;
+    padding-right: 10vmin;
+}
+
+.Pages-contactlogo {
+    width: 60vmin;
+}
+
+.Pages-graytext {
+    color: gray;
+}
+
+.Pages-formsmallinput {
+    background-color: rgb(248,249,252);
+    border-color: rgb(237,237,238);
+    border-radius: 3%;
+    width: 32vmin;
+    height: 5vmin;
+}
+
+.Pages-forminput {
+    background-color: rgb(248,249,252);
+    border-color: rgb(237,237,238);
+    border-radius: 3%;
+    width: 72vmin;
+    height: 5vmin;
+}
+
+.Pages-contactforminputdiv {
+    display: flex;
+    width: 100%;
+    gap: 4%;
+}
+
+.Pages-contactmessageinput {
+    background-color: rgb(248,249,252);
+    border-color: rgb(237,237,238);
+    border-radius: 3%;
+    width: 72vmin;
+    height: 15vmin;
+}
+
+.Pages-addphonebutton {
+    font-weight: bold;
+    color: rgb(71,138,192);
+    background-color: rgb(238,247,255);
+    text-align: center;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+    width: 72vmin;
+    cursor: pointer;
+}
+
 .Pages-nopagetext {
     height: 10vmin;
     background-color: white;
