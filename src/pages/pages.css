@@ -31,7 +31,12 @@
     padding: 8vmin;
 }
 
-.Pages-leftdiv {
+.Pages-homeleftdiv1 {
+    margin-left: 16vmin;
+    width: 70vmin;
+}
+
+.Pages-homeleftdiv2 {
     margin-left: 22vmin;
     width: 70vmin;
 }
@@ -129,6 +134,22 @@
     column-count: 3;
     margin-left: 22vmin;
     margin-right: 22vmin;
+}
+
+.Pages-leftarrow {
+    height: 2vmin;
+    text-align: left;
+    padding: 2vmin;
+    background: rgb(86,85,85)
+}
+
+.Pages-rightarrow {
+    height: 2vmin;
+    text-align: right;
+    padding: 2vmin;
+    background: rgb(86,85,85);
+    margin-left: auto;
+    transform: rotateY(180deg);
 }
 
 .Pages-aboutdiv {

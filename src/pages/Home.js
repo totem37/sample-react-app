@@ -16,7 +16,7 @@ function Home() {
     return (
         <>
             <Carousel images={mainImages} imagePositions={mainImagePositions}>
-                <div className="Pages-leftdiv">
+                <div className="Pages-homeleftdiv1">
                     <h1 className="Pages-h1">Lorem ipsum dolor</h1>
                     <h3 className="Pages-h3">Lorem ipsum</h3>
                     <br/>
@@ -25,7 +25,7 @@ function Home() {
             </Carousel>
 
             <div className="Pages-homediv2">
-                <div className="Pages-leftdiv">
+                <div className="Pages-homeleftdiv2">
                     <h2 className="Pages-h2">Lorem ipsum dolor</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Et ultrices neque ornare aenean euismod elementum nisi. Urna molestie at elementum eu facilisis sed odio morbi quis.</p>
