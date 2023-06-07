@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import Carousel from "../components/Carousel";
+
 import "./pages.css";
 
 function Home() {
@@ -8,16 +10,19 @@ function Home() {
         document.title = "Home";
     }, []);
 
+    const mainImages = ["shutterstock_407632243.jpg", "shutterstock_696636346.jpg"];
+    const mainImagePositions = ['60% 25%', '50% 50%'];
+
     return (
         <>
-            <div className="Pages-homediv1">
+            <Carousel images={mainImages} imagePositions={mainImagePositions}>
                 <div className="Pages-leftdiv">
                     <h1 className="Pages-h1">Lorem ipsum dolor</h1>
                     <h3 className="Pages-h3">Lorem ipsum</h3>
                     <br/>
                     <NavLink to="/contact-us" className="Pages-contactbutton">Contact us</NavLink>
                 </div>
-            </div>
+            </Carousel>
 
             <div className="Pages-homediv2">
                 <div className="Pages-leftdiv">

@@ -1,8 +1,5 @@
 .Pages-homediv1 {
     height: 57vmin;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%),
-                      url("../../public/shutterstock_407632243.jpg");
-    background-position: 60% 25%;
     display: flex;
     align-items: center;
     padding-bottom: 5vmin;
