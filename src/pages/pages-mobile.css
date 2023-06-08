@@ -1,0 +1,222 @@
+.Pagesmobile-homediv1 {
+    height: 70vmin;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5vmin;
+}
+
+.Pagesmobile-homediv3 {
+    height: 70vmin;
+    display: flex;
+    background-image: url("../../public/shutterstock_1302552622.jpg");
+    background-position: 60% 10%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pagesmobile-homediv2 {
+    margin: 2vmin;
+}
+
+.Pagesmobile-homebox {
+    width: 70vmin;
+    background-color: rgba(101,94,91,0.75);
+    padding: 4vmin;
+    padding-bottom: 6vmin;
+    border-radius: 2%;
+}
+
+.Pagesmobile-h1 {
+    font-size: 8vmin;
+    font-weight: normal;
+    color: white;
+    margin: 0vmin;
+    padding-top: 20vmin;
+}
+
+.Pagesmobile-h2 {
+    font-size: 7vmin;
+    font-weight: normal;
+    color: black;
+}
+
+.Pagesmobile-h3 {
+    font-size: 5vmin;
+    font-weight: normal;
+    color: white;
+}
+
+.Pagesmobile-h4 {
+    font-size: 4vmin;
+    font-weight: bold;
+    color: black;
+}
+
+.Pagesmobile-abouth5 {
+    font-size: 4vmin;
+    font-weight: bold;
+    color: black;
+    margin-left: 2vmin;
+}
+
+.Pagesmobile-text {
+    font-size: 3vmin;
+    text-align: left;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+}
+
+.Pagesmobile-centertext {
+    font-size: 3vmin;
+    text-align: center;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+}
+
+.Pagesmobile-contactbutton {
+    background-color: rgb(47,123,184);
+    color: white;
+    font-size: 3vmin;
+    text-decoration: none;
+    border-radius: 3%;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+    padding-left: 20vmin;
+    padding-right: 20vmin;
+}
+
+.Pagesmobile-ul {
+    font-size: 3vmin;
+    font-weight: bold;
+}
+
+.Pagesmobile-homeofficepicture {
+    margin-top: 6vmin;
+    height: 50vmin;
+}
+
+.Pagesmobile-centerdiv {
+    text-align: center;
+}
+
+
+.Pagesmobile-boxh2 {
+    font-size: 7vmin;
+    font-weight: normal;
+    color: white;
+    margin-top: 0;
+    text-align: left;
+}
+
+.Pagesmobile-boxtext {
+    font-size: 3vmin;
+    color: white;
+    text-align: left;
+}
+
+.Pagesmobile-loginbutton {
+    background-color: rgb(238,247,255);
+    color: rgb(47,123,184);
+    font-size: 3vmin;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3%;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+    padding-left: 20vmin;
+    padding-right: 20vmin;
+}
+
+.Pagesmobile-aboutdiv {
+    text-align: left;
+    margin: 2vmin;
+}
+
+.Pagesmobile-abouth2 {
+    font-size: 7vmin;
+    font-weight: normal;
+    color: black;
+    margin-left: 2vmin;
+}
+
+.Pagesmobile-contactleftdiv {
+    margin: 2vmin;
+}
+
+.Pagesmobile-formsmallinput {
+    background-color: rgb(248,249,252);
+    border-color: rgb(237,237,238);
+    border-radius: 3%;
+    width: 48%;
+    height: 8vmin;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+    font-size: 5vmin;
+}
+
+.Pagesmobile-forminput {
+    background-color: rgb(248,249,252);
+    border-color: rgb(237,237,238);
+    border-radius: 3%;
+    width: 95%;
+    height: 8vmin;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+    font-size: 5vmin;
+}
+
+.Pagesmobile-contactmessageinput {
+    background-color: rgb(248,249,252);
+    border-color: rgb(237,237,238);
+    border-radius: 3%;
+    font-size: 3vmin;
+    width: 95%;
+    height: 20vmin;
+}
+
+.Pagesmobile-checkbox {
+    width: 4vmin;
+}
+
+.Pagesmobile-addphonebutton {
+    font-weight: bold;
+    font-size: 3vmin;
+    color: rgb(71,138,192);
+    background-color: rgb(238,247,255);
+    text-align: center;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+    width: 100%;
+    border-radius: 3%;
+    cursor: pointer;
+}
+
+.Pagesmobile-submitbutton {
+    font-weight: bold;
+    font-size: 3vmin;
+    background-color: rgb(71,138,192);
+    color: white;
+    border: none;
+    border-radius: 3%;
+    width: 100%;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+}
+
+.Pagesmobile-contactsubmitimage {
+    width: 5vmin;
+    position: absolute;
+    left: 5vmin;
+}
+
+.Pagesmobile-contactsuccessdiv {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(233,244,218);
+    border-radius: 3%;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+}

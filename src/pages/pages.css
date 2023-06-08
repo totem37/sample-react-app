@@ -49,7 +49,7 @@
 .Pages-homeleftbox {
     margin-left: 22vmin;
     width: 70vmin;
-    background-color: rgb(101,94,91);
+    background-color: rgba(101,94,91, 0.75);
     padding: 4vmin;
     padding-bottom: 6vmin;
     border-radius: 2%;
@@ -119,7 +119,7 @@
 
 .Pages-loginbutton {
     background-color: rgb(238,247,255);
-    color: blue;
+    color: rgb(47,123,184);
     font-size: 2vmin;
     text-decoration: none;
     border-radius: 5%;
@@ -172,7 +172,7 @@
 
 .Pages-contactleftdiv {
     margin-left: 24vmin;
-    width: 80vmin;
+    width: 72vmin;
     padding-right: 10vmin;
 }
 
@@ -188,7 +188,7 @@
     background-color: rgb(248,249,252);
     border-color: rgb(237,237,238);
     border-radius: 3%;
-    width: 32vmin;
+    width: 32.5vmin;
     height: 5vmin;
 }
 
@@ -202,7 +202,7 @@
 
 .Pages-contactforminputdiv {
     display: flex;
-    width: 100%;
+    width: 72vmin;
     gap: 4%;
 }
 
@@ -231,7 +231,7 @@
     color: white;
     border: none;
     border-radius: 3%;
-    width: 73vmin;
+    width: 72vmin;
     padding: 2vmin;
 }
 

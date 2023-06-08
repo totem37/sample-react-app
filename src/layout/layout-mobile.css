@@ -1,0 +1,27 @@
+.Navbarmobile-container {
+    background-color: white;
+    justify-content: center;
+    font-size: 3vmin;
+    color: black;
+    border-bottom: 1px solid lightgray;
+    height: 9vmin;
+    text-align: center;
+}
+
+.Navbarmobile-companylogo {
+    height: 4vmin;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    margin: 2vmin;
+}
+
+.Footermobile-container {
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    font-size: 2vmin;
+    color: gray;
+    border-top: 1px solid lightgray;
+}
