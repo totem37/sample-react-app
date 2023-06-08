@@ -14,7 +14,13 @@ function ContactForm() {
     const mobile = ScreenSize() === 's';
 
     const [numPhoneNumbers, setNumPhoneNumbers] = useState(1);
+    const [includeAddress, setIncludeAddress] = useState(false);
     const [success, setSuccess] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
+    function changeAddress() {
+        setIncludeAddress(!includeAddress);
+    }
 
     return(
         <div>
@@ -27,9 +33,27 @@ function ContactForm() {
                     <h2 className={mobile?"Pagesmobile-h4":"Pages-h2"}>Your message has been sent</h2>
                     <p className={mobile?"Pagesmobile-centertext":"Pages-text"}>We will be in contact with you within 24 hours.</p>
                 </div>
+            ) : errorMessage !== "" ? (
+                <div className={mobile?"Pagesmobile-contactfailurediv":"Pages-contactfailurediv"}>
+                    <h2 className={mobile?"Pagesmobile-h4":"Pages-h2"}>Error</h2>
+                    <p className={mobile?"Pagesmobile-centertext":"Pages-text"}>{errorMessage}</p>
+                </div>
             ) : (
                 <Formik
-                initialValues={{"FullName": "", "EmailAddress": "", "Message": "", "PhoneNumbers": [""]}}
+                initialValues={{
+                    "FullName": "",
+                    "EmailAddress": "",
+                    "Message": "",
+                    "PhoneNumbers": [""],
+                    "bIncludeAddressDetails": false,
+                    "addressDetails": {
+                        "AddressLine1": "",
+                        "AddressLine2": "",
+                        "CityTown": "",
+                        "StateCounty": "",
+                        "Postcode": "",
+                        "Country": ""
+                    }}}
                 validate={(values) => {
                     const errors = {};
                     if (!values.EmailAddress) {
@@ -42,6 +66,18 @@ function ContactForm() {
                         errors.EmailAddress = 'Invalid email address';
                     } else if (values.Message.length > 500) {
                         errors.Message = 'Maximum text length is 500 characters';
+                    } else if (values.bIncludeAddressDetails) {
+                        if (!values.AddressLine1) {
+                            errors.AddressLine1 = 'Required if including address details';
+                        } else if (!values.CityTown) {
+                            errors.CityTown = 'Required if including address details';
+                        } else if (!values.StateCounty) {
+                            errors.StateCounty = 'Required if including address details';
+                        } else if (!values.Postcode) {
+                            errors.Postcode = 'Required if including address details';
+                        } else if (!values.Country) {
+                            errors.Country = 'Required if including address details';
+                        }
                     }
                     return errors;
                 }}
@@ -53,10 +89,17 @@ function ContactForm() {
                         Object.keys(values).filter(function(i) {return i.includes("phone")}).forEach(k => {
                             values.PhoneNumbers.push(values[k]);
                         });
+                        const addressFields = ["AddressLine1", "AddressLine2", "CityTown", "StateCounty", "Postcode", "Country"];
+                        addressFields.forEach(function(item) {values.addressDetails[item] = values[item]});
+                        console.log(values);
                         axios.post(BASE_URL + '/api/v1/contact-us/submit', values).then((response) => {
                             if (response.status === 200) {
                                 setSuccess(true);
+                            } else {
+                                setErrorMessage(response.data.Errors[0].MessageCode);
                             }
+                        }).catch((error) => {
+                            setErrorMessage(error.response.data.Errors[0].MessageCode);
                         });
                     }, 400);
                 }}>
@@ -99,10 +142,72 @@ function ContactForm() {
                             <br/>
 
                             <div className="Pages-contactdiv">
-                                <Field name="addresscheckbox" type="checkbox" className={mobile?"Pagesmobile-checkbox":""}/>
+                                <Field name="bIncludeAddressDetails" type="checkbox" className={mobile?"Pagesmobile-checkbox":""} onClick={changeAddress}/>
                                 <p className={mobile?"Pagesmobile-text":""}><b>Add address details</b></p>
                             </div>
                             <br/>
+
+                            {includeAddress && (
+                                <>
+                                {mobile ? (
+                                    <>
+                                        <FormField fieldName="AddressLine1" fieldType="text" fieldDisplayName="Address line 1" required={includeAddress} small={false}/>
+                                        <br/>
+                                        <FormField fieldName="AddressLine2" fieldType="text" fieldDisplayName="Address line 2" required={false} small={false}/>
+                                    </>
+                                ) : (
+                                    <div className="Pages-contactforminputdiv">
+                                        <FormField fieldName="AddressLine1" fieldType="text" fieldDisplayName="Address line 1" required={includeAddress} small={true}/>
+                                        <br/>
+                                        <FormField fieldName="AddressLine2" fieldType="text" fieldDisplayName="Address line 2" required={false} small={true}/>
+                                    </div>
+                                )}
+                                <br/>
+
+                                {mobile ? (
+                                    <>
+                                        <div className="Pagesmobile-contactformsmallinputdiv">
+                                            <FormField fieldName="CityTown" fieldType="text" fieldDisplayName="City/Town" required={includeAddress} small={true}/>
+                                            <br/>
+                                            <FormField fieldName="StateCounty" fieldType="text" fieldDisplayName="State/County" required={includeAddress} small={true}/>
+                                        </div>
+                                        <br/>
+                                        <div className="Pagesmobile-contactformsmallinputdiv">
+                                            <FormField fieldName="Postcode" fieldType="text" fieldDisplayName="Postcode" required={includeAddress} small={true}/>
+                                            <br/>
+                                            <FormField fieldName="Country" fieldType="text" fieldDisplayName="Country" required={includeAddress} small={true}/>
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className="Pages-contactforminputdiv">
+                                        <div>
+                                            <p>City/Town</p>
+                                            <Field type="text" name="CityTown" className="Pages-forminputquarter"/>
+                                            <ErrorMessage name="CityTown" component="div" />
+                                        </div>
+
+                                        <div>
+                                            <p>State/County</p>
+                                            <Field type="text" name="StateCounty" className="Pages-forminputquarter"/>
+                                            <ErrorMessage name="StateCounty" component="div" />
+                                        </div>
+
+                                        <div>
+                                            <p>Postcode</p>
+                                            <Field type="text" name="Postcode" className="Pages-forminputquarter"/>
+                                            <ErrorMessage name="Postcode" component="div" />
+                                        </div>
+
+                                        <div>
+                                            <p>Country</p>
+                                            <Field type="text" name="Country" className="Pages-forminputquarter"/>
+                                            <ErrorMessage name="Country" component="div" />
+                                        </div>
+                                    </div>
+                                )}
+                                <br/>
+                                </>
+                            )}
 
                             <div className="Pages-contactsubmitdiv" disabled={isSubmitting}>
                                 <img src="Icon_Submit.svg" alt="Submit" className={mobile?"Pagesmobile-contactsubmitimage":"Pages-contactsubmitimage"}/>
