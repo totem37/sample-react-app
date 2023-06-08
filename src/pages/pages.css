@@ -225,6 +225,44 @@
     cursor: pointer;
 }
 
+.Pages-submitbutton {
+    font-weight: bold;
+    background-color: rgb(71,138,192);
+    color: white;
+    border: none;
+    border-radius: 3%;
+    width: 73vmin;
+    padding: 2vmin;
+}
+
+.Pages-contactsubmitdiv {
+    display: flex;
+    align-items: center;
+}
+
+.Pages-contactsubmitimage {
+    width: 3vmin;
+    position: absolute;
+    left: 25vmin;
+}
+
+.Pages-contactsuccessdiv {
+    width: 72vmin;
+    text-align: center;
+    background-color: rgb(233,244,218);
+    border-radius: 3%;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+}
+
+.Pages-contactsuccessimage {
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 100%;
+    padding: 1vmin;
+    background-color: rgb(142,199,61);
+}
+
 .Pages-nopagetext {
     height: 10vmin;
     background-color: white;
