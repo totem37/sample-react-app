@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 5vmin;
+    background-size: 100%;
 }
 
 .Pages-homediv2 {
@@ -278,6 +279,12 @@
     border-radius: 100%;
     padding: 1vmin;
     background-color: rgb(142,199,61);
+}
+
+.Pages-loadingtext {
+    text-align: center;
+    margin: auto;
+    font-size: 3vmin;
 }
 
 .Pages-nopagetext {

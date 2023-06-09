@@ -22,6 +22,27 @@ function ContactForm() {
         setIncludeAddress(!includeAddress);
     }
 
+    function handleSubmit(values, setSubmitting) {
+        setTimeout(() => {
+            setSubmitting(false);
+            values.PhoneNumbers = [];
+            Object.keys(values).filter(function(i) {return i.includes("phone")}).forEach(k => {
+                values.PhoneNumbers.push(values[k]);
+            });
+            const addressFields = ["AddressLine1", "AddressLine2", "CityTown", "StateCounty", "Postcode", "Country"];
+            addressFields.forEach(function(item) {values.addressDetails[item] = values[item]});
+            axios.post(BASE_URL + '/api/v1/contact-us/submit', values).then((response) => {
+                if (response.status === 200) {
+                    setSuccess(true);
+                } else {
+                    setErrorMessage(response.data.Errors[0].MessageCode);
+                }
+            }).catch((error) => {
+                setErrorMessage(error.response.data.Errors[0].MessageCode);
+            });
+        }, 400);
+    }
+
     return(
         <div>
             <h2 className={mobile?"Pagesmobile-abouth2":"Pages-h2"}>Contact us</h2>
@@ -33,12 +54,13 @@ function ContactForm() {
                     <h2 className={mobile?"Pagesmobile-h4":"Pages-h2"}>Your message has been sent</h2>
                     <p className={mobile?"Pagesmobile-centertext":"Pages-text"}>We will be in contact with you within 24 hours.</p>
                 </div>
-            ) : errorMessage !== "" ? (
-                <div className={mobile?"Pagesmobile-contactfailurediv":"Pages-contactfailurediv"}>
-                    <h2 className={mobile?"Pagesmobile-h4":"Pages-h2"}>Error</h2>
-                    <p className={mobile?"Pagesmobile-centertext":"Pages-text"}>{errorMessage}</p>
-                </div>
-            ) : (
+            ) : (<>
+                {errorMessage !== "" && (
+                    <div className={mobile?"Pagesmobile-contactfailurediv":"Pages-contactfailurediv"}>
+                        <h2 className={mobile?"Pagesmobile-h4":"Pages-h2"}>Error</h2>
+                        <p className={mobile?"Pagesmobile-centertext":"Pages-text"}>{errorMessage}</p>
+                    </div>
+                )}
                 <Formik
                 initialValues={{
                     "FullName": "",
@@ -82,26 +104,7 @@ function ContactForm() {
                     return errors;
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                        values.PhoneNumbers = [];
-                        Object.keys(values).filter(function(i) {return i.includes("phone")}).forEach(k => {
-                            values.PhoneNumbers.push(values[k]);
-                        });
-                        const addressFields = ["AddressLine1", "AddressLine2", "CityTown", "StateCounty", "Postcode", "Country"];
-                        addressFields.forEach(function(item) {values.addressDetails[item] = values[item]});
-                        console.log(values);
-                        axios.post(BASE_URL + '/api/v1/contact-us/submit', values).then((response) => {
-                            if (response.status === 200) {
-                                setSuccess(true);
-                            } else {
-                                setErrorMessage(response.data.Errors[0].MessageCode);
-                            }
-                        }).catch((error) => {
-                            setErrorMessage(error.response.data.Errors[0].MessageCode);
-                        });
-                    }, 400);
+                    handleSubmit(values, setSubmitting);
                 }}>
                     {({values, isSubmitting}) => (
                         <Form className={mobile?"Pagesmobile-form":""}>
@@ -216,6 +219,7 @@ function ContactForm() {
                         </Form>
                     )}
                 </Formik>
+            </>
             )}
         </div>
     );

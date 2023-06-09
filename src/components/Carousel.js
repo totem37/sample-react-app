@@ -13,7 +13,7 @@ function Carousel(props) {
     const imagePositions = props.imagePositions;
     const [imageIndex, setImageIndex] = useState(0);
     const styles = {
-        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%), url("+(images[imageIndex % numImages]+")"),
+        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%), url("+images[imageIndex % numImages]+")",
         backgroundPosition: imagePositions[imageIndex % numImages],
     }
 
